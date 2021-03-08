@@ -1,0 +1,53 @@
+.alltransaction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.alltransaction > h1 {
+  margin-bottom: 30px;
+  margin-top: 30px;
+  color: #1e212d;
+  text-align: center;
+  font-size: 2.3rem;
+  color: darkblue;
+  text-shadow: 2px 2px 4px blue;
+  letter-spacing: 1.2px;
+}
+.alltransactionsingle {
+  padding: 10px;
+}
+table,
+th,
+td {
+  border: 1.7px solid black !important;
+  border-collapse: collapse;
+}
+th {
+  padding: 20px !important;
+  font-size: 1.3rem !important;
+  color: black !important;
+  font-size: 1.5rem !important ;
+}
+td {
+  padding: 15px !important;
+  font-weight: 600;
+  font-size: 1.3rem !important;
+  font-style: italic !important;
+}
+table {
+  table-layout: fixed;
+}
+td {
+  width: 40% !important;
+}
+td {
+  text-align: center !important;
+}
+.date {
+  color: #03506f;
+}
+.data {
+  color: #26001b;
+  font-weight: 600;
+  font-size: 1.3rem;
+}

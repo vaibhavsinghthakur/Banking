@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  background-color: #e8eae6;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 3px 3px 5px 3px #cdd0cb;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.Link_tag {
+  text-decoration: none !important;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 1.2rem;
+  transition-delay: 0.1s;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px #8ac4d0 !important;
+  color: #4a47a3;
+  letter-spacing: 2px;
+}
+.Link_tag:hover {
+  border-radius: 10px;
+  color: white;
+  opacity: 0.7;
+  transition-delay: 0.1s;
+  text-shadow: 2px 2px 4px cyan !important;
+  color: red;
+}
+.header > p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.header_bank_logo {
+  display: flex;
+  margin: 5px;
+  align-items: center;
+}
+.header_bank_logo > h2 {
+  margin: 3px;
+}
+.header_logo {
+  color: blue !important;
+}

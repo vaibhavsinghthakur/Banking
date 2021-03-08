@@ -1,0 +1,114 @@
+.transfermoney {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.transfermoney > h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 2.3rem;
+  color: #8c0000;
+}
+.transfermoney > p {
+  font-size: larger;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #440a67;
+}
+
+.transfer_money_part > form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.transfer_money_part > form > input {
+  margin: 10px;
+  padding: 8px;
+  font-size: larger;
+  border: 2px solid cornflowerblue;
+}
+.transfer_money_part > form > input {
+  width: 95%;
+  font-weight: 600px;
+}
+.transfer_money_part > form > button {
+  margin-left: 40px;
+  align-items: center;
+  margin-top: 20px;
+  padding: 4px;
+  margin-bottom: 20px;
+  width: 90%;
+  padding: 6px;
+  background-color: #4a47a3;
+  color: aliceblue;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  border-radius: 10px;
+}
+.transfer_money_part > form > button:hover {
+  background-color: #26001b;
+}
+.userdata {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  align-items: center;
+  border: 2px solid black;
+}
+
+.userdata_single {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+  margin: 10px;
+}
+.userdata > p {
+  margin-top: 30px;
+  font-size: 1.2rem;
+}
+.userdata_single > h2 {
+  color: black;
+}
+.userdata_single > span {
+  font-size: 1.7rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  text-shadow: 1px 1px 1px gray, 0 0 1px blue, 0 0 1px red !important;
+  letter-spacing: 2.5px;
+}
+.userdata_single > h2 {
+  font-weight: 5600;
+}
+.labels {
+  margin-left: 10px;
+  text-align: center;
+  color: white;
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+  margin-bottom: 7px;
+  letter-spacing: 2px;
+}
+.transfer_money_part {
+  /*background-color: black;*/
+  padding: 10px;
+  padding-bottom: 2px;
+  width: 50%;
+  margin-top: 20px;
+  border-radius: 15px;
+  background-color: #dddd;
+  margin-bottom: 30px;
+}
+.ll {
+  margin-top: 30px;
+}
+/*.transfer_money_part_tl {
+  background-color: black;
+  margin-top: 20px;
+  border-radius: 10px !important;
+  width: 100% !important;
+  padding-right: 30px;
+}*/
