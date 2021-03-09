@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import {db} from "./firebase";
 import "./Css_Files/TableTransfer1.css"
 import firebase from "firebase";
+import "@material-ui/core"
 function TableTransfer7() {
 
     const [Customers,setCustomers]=useState([]);
