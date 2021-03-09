@@ -7,6 +7,7 @@ function TableTransfer1() {
     const [Customers,setCustomers]=useState([]);
     const [name,setName]=useState("");
     const [AccountNo,setAccountNo]=useState("");
+    const [email,setEmail]=useState("");
     const [CurrentBalance,setCurrentBalance]=useState("");
 
 
@@ -31,6 +32,7 @@ function TableTransfer1() {
                setName(customer.data.name)
                setAccountNo(customer.data.AccountNo)
                setCurrentBalance(customer.data.CurrentBalance)
+               setEmail(customer.data.email)
           }
         })
     }, [Customers])  
@@ -168,6 +170,11 @@ function TableTransfer1() {
                     <h2>CurrentBalance -</h2>
                     <span>Rs. {CurrentBalance}</span>
                 </div>
+                <div className="userdata_single">
+                    <h2>Email -</h2>
+                    <span>{email}</span>
+                </div>
+                
             </div>
             <p>Be Careful Please Enter Amount Less than or Equal to Your Current Balance.</p>
             <div className="transfer_money_part">
