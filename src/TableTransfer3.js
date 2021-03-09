@@ -37,102 +37,120 @@ function TableTransfer3() {
 
     const handleClick =(e)=>{
         e.preventDefault();
+
+
+        if(userEnteredAccountNo==100101 || userEnteredAccountNo==100102 || 
+            userEnteredAccountNo==100103 ||
+            userEnteredAccountNo==100104 ||
+            userEnteredAccountNo==100105 ||
+            userEnteredAccountNo==100106 ||
+            userEnteredAccountNo==100107){
+ 
+          
+
  
         if(CurrentBalance>=userEnteredAmount){
           
            
-        alert(`Rs. ${userEnteredAmount} Transferred from AccountNumber-100103 to AccountNumber-${userEnteredAccountNo} `)
+            alert(`Rs. ${userEnteredAmount} Transferred from AccountNumber-100103 to AccountNumber-${userEnteredAccountNo} `)
+    
+            let D=`Rs. ${userEnteredAmount} Transferred from AccountNumber-100103 to AccountNumber-${userEnteredAccountNo} `;  
+            
+            let tt=new Date()
+    
+            tt=tt.toString();
+            
+            db.collection("AllTransactions").add({
+                    T1: D,
+                    timestamp:firebase.firestore.FieldValue.serverTimestamp(),
+                    Timestamp:tt,
+            });
+    
+            tt=0;
+            
+    
+            Customers.map((customer)=>{
+                           
+            //Money Added to the Other Account
+            if(userEnteredAccountNo==="100101"){
+                let realmoney=0;
+                if (customer.id==="DN1UsE5x4Uf1vRp1IUxZ"){
+                    realmoney=parseInt(customer.data.CurrentBalance)+parseInt(userEnteredAmount);
+                    db.collection("Customers").doc("DN1UsE5x4Uf1vRp1IUxZ").update({
+                        "CurrentBalance":realmoney ,
+                    })
+                }
+            }
+            else if(userEnteredAccountNo==="100102"){
+                let realmoney=0;
+                if (customer.id==="DSGkBkkrrVyuOcXV1RyT"){
+                    realmoney=parseInt(customer.data.CurrentBalance)+parseInt(userEnteredAmount);
+                    db.collection("Customers").doc("DSGkBkkrrVyuOcXV1RyT").update({
+                        "CurrentBalance":realmoney ,
+                    })
+                } 
+            }
+            else if(userEnteredAccountNo==="100104"){
+                let realmoney=0;
+                if (customer.id==="JlqsidG6pIkxoyL51Swt"){
+                    realmoney=parseInt(customer.data.CurrentBalance)+parseInt(userEnteredAmount);
+                    db.collection("Customers").doc("JlqsidG6pIkxoyL51Swt").update({
+                        "CurrentBalance":realmoney ,
+                    })
+                }
+            }
+            else if(userEnteredAccountNo==="100105"){
+                let realmoney=0;
+                if (customer.id==="0hVoqDHymv2h2bUXiIrY"){
+                    realmoney=parseInt(customer.data.CurrentBalance)+parseInt(userEnteredAmount);
+                    db.collection("Customers").doc("0hVoqDHymv2h2bUXiIrY").update({
+                        "CurrentBalance":realmoney ,
+                    })
+                }
+            }
+            else if(userEnteredAccountNo==="100106"){
+                let realmoney=0;
+                if (customer.id==="EOUcWoBawgagaj0tIyTO"){
+                    realmoney=parseInt(customer.data.CurrentBalance)+parseInt(userEnteredAmount);
+                    db.collection("Customers").doc("EOUcWoBawgagaj0tIyTO").update({
+                        "CurrentBalance":realmoney ,
+                    })
+                }
+            }
+            else if(userEnteredAccountNo==="100107"){
+                let realmoney=0;
+                if (customer.id==="nTiQHoRxrEW6fKSgrBNz"){
+                    realmoney=parseInt(customer.data.CurrentBalance)+parseInt(userEnteredAmount);
+                    db.collection("Customers").doc("nTiQHoRxrEW6fKSgrBNz").update({
+                        "CurrentBalance":realmoney ,
+                    })
+                }
+            }
+    
+            ////////////////////////////////////////
+            //Money SUbtracted from the user account
+            if(AccountNo==="100103" &&
+            name==="Shreya Singh"){
+                let realmoney=0;
+                if (customer.id==="SIktLJ4T830Cc6F4rFaC"){
+                    realmoney=parseInt(customer.data.CurrentBalance)-parseInt(userEnteredAmount);
+                    db.collection("Customers").doc("SIktLJ4T830Cc6F4rFaC").update({
+                        "CurrentBalance":realmoney ,
+                    })
+                }
+            }
+            });
+      
+            }else{
+                alert("Not Enough Money");
+            }        
 
-        let D=`Rs. ${userEnteredAmount} Transferred from AccountNumber-100103 to AccountNumber-${userEnteredAccountNo} `;  
-        
-        let tt=new Date()
 
-        tt=tt.toString();
-        
-        db.collection("AllTransactions").add({
-                T1: D,
-                timestamp:firebase.firestore.FieldValue.serverTimestamp(),
-                Timestamp:tt,
-        });
-
-        tt=0;
-        
-
-        Customers.map((customer)=>{
-                       
-        //Money Added to the Other Account
-        if(userEnteredAccountNo==="100101"){
-            let realmoney=0;
-            if (customer.id==="DN1UsE5x4Uf1vRp1IUxZ"){
-                realmoney=parseInt(customer.data.CurrentBalance)+parseInt(userEnteredAmount);
-                db.collection("Customers").doc("DN1UsE5x4Uf1vRp1IUxZ").update({
-                    "CurrentBalance":realmoney ,
-                })
-            }
-        }
-        else if(userEnteredAccountNo==="100102"){
-            let realmoney=0;
-            if (customer.id==="DSGkBkkrrVyuOcXV1RyT"){
-                realmoney=parseInt(customer.data.CurrentBalance)+parseInt(userEnteredAmount);
-                db.collection("Customers").doc("DSGkBkkrrVyuOcXV1RyT").update({
-                    "CurrentBalance":realmoney ,
-                })
-            } 
-        }
-        else if(userEnteredAccountNo==="100104"){
-            let realmoney=0;
-            if (customer.id==="JlqsidG6pIkxoyL51Swt"){
-                realmoney=parseInt(customer.data.CurrentBalance)+parseInt(userEnteredAmount);
-                db.collection("Customers").doc("JlqsidG6pIkxoyL51Swt").update({
-                    "CurrentBalance":realmoney ,
-                })
-            }
-        }
-        else if(userEnteredAccountNo==="100105"){
-            let realmoney=0;
-            if (customer.id==="0hVoqDHymv2h2bUXiIrY"){
-                realmoney=parseInt(customer.data.CurrentBalance)+parseInt(userEnteredAmount);
-                db.collection("Customers").doc("0hVoqDHymv2h2bUXiIrY").update({
-                    "CurrentBalance":realmoney ,
-                })
-            }
-        }
-        else if(userEnteredAccountNo==="100106"){
-            let realmoney=0;
-            if (customer.id==="EOUcWoBawgagaj0tIyTO"){
-                realmoney=parseInt(customer.data.CurrentBalance)+parseInt(userEnteredAmount);
-                db.collection("Customers").doc("EOUcWoBawgagaj0tIyTO").update({
-                    "CurrentBalance":realmoney ,
-                })
-            }
-        }
-        else if(userEnteredAccountNo==="100107"){
-            let realmoney=0;
-            if (customer.id==="nTiQHoRxrEW6fKSgrBNz"){
-                realmoney=parseInt(customer.data.CurrentBalance)+parseInt(userEnteredAmount);
-                db.collection("Customers").doc("nTiQHoRxrEW6fKSgrBNz").update({
-                    "CurrentBalance":realmoney ,
-                })
-            }
-        }
-
-        ////////////////////////////////////////
-        //Money SUbtracted from the user account
-        if(AccountNo==="100103" &&
-        name==="Shreya Singh"){
-            let realmoney=0;
-            if (customer.id==="SIktLJ4T830Cc6F4rFaC"){
-                realmoney=parseInt(customer.data.CurrentBalance)-parseInt(userEnteredAmount);
-                db.collection("Customers").doc("SIktLJ4T830Cc6F4rFaC").update({
-                    "CurrentBalance":realmoney ,
-                })
-            }
-        }
-        });
-  
         }else{
-            alert("Not Enough Money");
+            alert(`Sorry Account Number "${userEnteredAccountNo}" is not present in Database.`)
         }
+
+
        
        setuserEnteredAccountNo("");
        setuserEnteredAmount("");
