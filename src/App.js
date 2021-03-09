@@ -3,13 +3,13 @@ import Header from "./Header.js";
 import { BrowserRouter as Router, Switch, Route, Link ,useParams} from "react-router-dom";
 import AllCustomers from "./AllCustomers.js";
 import Home from "./Home.js";
-import Single1 from "./Single1.js"
-import Single2 from "./Single2.js"
-import Single3 from "./Single3.js"
-import Single4 from "./Single4.js"
-import Single5 from "./Single5.js"
-import Single6 from "./Single6.js"
-import Single7 from "./Single7.js"
+import Single1 from "./Singles/Single1.js"
+import Single2 from "./Singles/Single2.js"
+import Single3 from "./Singles/Single3.js"
+import Single4 from "./Singles/Single4.js"
+import Single5 from "./Singles/Single5.js"
+import Single6 from "./Singles/Single6.js"
+import Single7 from "./Singles/Single7.js"
 
 import TableTransfer1 from "./TableTransfer1.js";
 import TableTransfer2 from "./TableTransfer2.js";

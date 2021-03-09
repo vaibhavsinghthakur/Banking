@@ -1,8 +1,8 @@
 import React,{useEffect, useState} from 'react'
-import {db} from "./firebase";
-import "./Css_Files/Single1.css"
+import {db} from "../firebase";
+import "../Css_Files/Single2.css"
 
-function Single1() {
+function Single2() {
     const [Customers,setCustomers]=useState([]);
     const [name,setName]=useState("");
     const [AccountNo,setAccountNo]=useState("");
@@ -14,21 +14,22 @@ function Single1() {
     const [Address,setAddress]=useState("");
     const [AadharCard,setAadharCard]=useState("");
 
+
     useEffect(() => {
-      db.collection("Customers")
-        .onSnapshot((snapshot) => {
-          setCustomers(
-            snapshot.docs.map((doc) => ({
-              id: doc.id, //Getting id
-              data: doc.data(), //getting data
-            }))
-          );
-        });
-    }, []);
-  
-    useEffect(() => {
+        db.collection("Customers")
+          .onSnapshot((snapshot) => {
+            setCustomers(
+              snapshot.docs.map((doc) => ({
+                id: doc.id, //Getting id
+                data: doc.data(), //getting data
+              }))
+            );
+          });
+      }, []);
+    
+      useEffect(() => {
         Customers.map((customer)=>{
-           if(customer.data.ID=="1"){
+           if(customer.data.ID=="2"){
                setName(customer.data.name)
                setAccountNo(customer.data.AccountNo)
                setCurrentBalance(customer.data.CurrentBalance)
@@ -41,6 +42,7 @@ function Single1() {
            }
         })
     }, [Customers])
+
     return (
         <div className="single1">
           <div className="box">
@@ -53,7 +55,7 @@ function Single1() {
           </div>
           <div className="box">
             <h2>Current Balance</h2>
-            <p>Rs. {CurrentBalance}</p>
+            <p>{CurrentBalance}</p>
           </div>
           <div className="box">
             <h2>Contact Number</h2>
@@ -80,8 +82,9 @@ function Single1() {
             <p className="address">{Address}</p>
           </div>
           
+          
         </div>
     )
 }
 
-export default Single1
+export default Single2

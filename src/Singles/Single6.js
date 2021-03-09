@@ -1,8 +1,8 @@
 import React,{useEffect, useState} from 'react'
-import {db} from "./firebase";
-import "./Css_Files/Single2.css"
+import {db} from "../firebase";
+import "../Css_Files/Single2.css"
 
-function Single7() {
+function Single6() {
     const [Customers,setCustomers]=useState([]);
     const [name,setName]=useState("");
     const [AccountNo,setAccountNo]=useState("");
@@ -16,20 +16,20 @@ function Single7() {
 
 
     useEffect(() => {
-        db.collection("Customers")
-          .onSnapshot((snapshot) => {
-            setCustomers(
-              snapshot.docs.map((doc) => ({
-                id: doc.id, //Getting id
-                data: doc.data(), //getting data
-              }))
-            );
-          });
-      }, []);
+      db.collection("Customers")
+        .onSnapshot((snapshot) => {
+          setCustomers(
+            snapshot.docs.map((doc) => ({
+              id: doc.id, //Getting id
+              data: doc.data(), //getting data
+            }))
+          );
+        });
+    }, []);
     
       useEffect(() => {
         Customers.map((customer)=>{
-           if(customer.data.ID=="7"){
+           if(customer.data.ID=="6"){
                setName(customer.data.name)
                setAccountNo(customer.data.AccountNo)
                setCurrentBalance(customer.data.CurrentBalance)
@@ -85,4 +85,4 @@ function Single7() {
     )
 }
 
-export default Single7
+export default Single6

@@ -1,8 +1,8 @@
 import React,{useEffect, useState} from 'react'
-import {db} from "./firebase";
-import "./Css_Files/Single2.css"
+import {db} from "../firebase";
+import "../Css_Files/Single2.css"
 
-function Single4() {
+function Single7() {
     const [Customers,setCustomers]=useState([]);
     const [name,setName]=useState("");
     const [AccountNo,setAccountNo]=useState("");
@@ -13,6 +13,7 @@ function Single4() {
     const [email,setEmail]=useState("");
     const [Address,setAddress]=useState("");
     const [AadharCard,setAadharCard]=useState("");
+
 
     useEffect(() => {
         db.collection("Customers")
@@ -26,9 +27,9 @@ function Single4() {
           });
       }, []);
     
-    useEffect(() => {
+      useEffect(() => {
         Customers.map((customer)=>{
-           if(customer.data.ID=="4"){
+           if(customer.data.ID=="7"){
                setName(customer.data.name)
                setAccountNo(customer.data.AccountNo)
                setCurrentBalance(customer.data.CurrentBalance)
@@ -84,4 +85,4 @@ function Single4() {
     )
 }
 
-export default Single4
+export default Single7

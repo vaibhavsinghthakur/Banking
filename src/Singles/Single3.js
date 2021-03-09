@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react'
-import {db} from "./firebase";
-import "./Css_Files/Single2.css"
+import {db} from "../firebase";
+import "../Css_Files/Single2.css"
 
 function Single3() {
     const [Customers,setCustomers]=useState([]);

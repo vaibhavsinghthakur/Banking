@@ -1,8 +1,8 @@
 import React,{useEffect, useState} from 'react'
-import {db} from "./firebase";
-import "./Css_Files/Single2.css"
+import {db} from "../firebase";
+import "../Css_Files/Single2.css"
 
-function Single2() {
+function Single5() {
     const [Customers,setCustomers]=useState([]);
     const [name,setName]=useState("");
     const [AccountNo,setAccountNo]=useState("");
@@ -29,7 +29,7 @@ function Single2() {
     
       useEffect(() => {
         Customers.map((customer)=>{
-           if(customer.data.ID=="2"){
+           if(customer.data.ID=="5"){
                setName(customer.data.name)
                setAccountNo(customer.data.AccountNo)
                setCurrentBalance(customer.data.CurrentBalance)
@@ -42,7 +42,6 @@ function Single2() {
            }
         })
     }, [Customers])
-
     return (
         <div className="single1">
           <div className="box">
@@ -82,9 +81,8 @@ function Single2() {
             <p className="address">{Address}</p>
           </div>
           
-          
         </div>
     )
 }
 
-export default Single2
+export default Single5

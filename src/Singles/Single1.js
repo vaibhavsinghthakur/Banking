@@ -1,8 +1,8 @@
 import React,{useEffect, useState} from 'react'
-import {db} from "./firebase";
-import "./Css_Files/Single2.css"
+import {db} from "../firebase";
+import "../Css_Files/Single1.css"
 
-function Single5() {
+function Single1() {
     const [Customers,setCustomers]=useState([]);
     const [name,setName]=useState("");
     const [AccountNo,setAccountNo]=useState("");
@@ -14,22 +14,21 @@ function Single5() {
     const [Address,setAddress]=useState("");
     const [AadharCard,setAadharCard]=useState("");
 
-
     useEffect(() => {
-        db.collection("Customers")
-          .onSnapshot((snapshot) => {
-            setCustomers(
-              snapshot.docs.map((doc) => ({
-                id: doc.id, //Getting id
-                data: doc.data(), //getting data
-              }))
-            );
-          });
-      }, []);
-    
-      useEffect(() => {
+      db.collection("Customers")
+        .onSnapshot((snapshot) => {
+          setCustomers(
+            snapshot.docs.map((doc) => ({
+              id: doc.id, //Getting id
+              data: doc.data(), //getting data
+            }))
+          );
+        });
+    }, []);
+  
+    useEffect(() => {
         Customers.map((customer)=>{
-           if(customer.data.ID=="5"){
+           if(customer.data.ID=="1"){
                setName(customer.data.name)
                setAccountNo(customer.data.AccountNo)
                setCurrentBalance(customer.data.CurrentBalance)
@@ -54,7 +53,7 @@ function Single5() {
           </div>
           <div className="box">
             <h2>Current Balance</h2>
-            <p>{CurrentBalance}</p>
+            <p>Rs. {CurrentBalance}</p>
           </div>
           <div className="box">
             <h2>Contact Number</h2>
@@ -85,4 +84,4 @@ function Single5() {
     )
 }
 
-export default Single5
+export default Single1
